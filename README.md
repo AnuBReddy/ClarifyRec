@@ -43,8 +43,8 @@ The comparison output is written to `experiments/comparison_smoke_results.csv`. 
 
 ## Inspect the work
 
-- Architecture source: `docs/architecture.mmd` (Mermaid diagram source).
-- Interaction walkthroughs: `docs/storyboards.md`.
+- Architecture source and vector diagram: `docs/architecture.mmd`, `docs/architecture.dot`, `docs/architecture.svg`.
+- Interaction walkthroughs and vector storyboard: `docs/storyboards.md`, `docs/storyboards.svg`.
 - Assignment 2 report draft: `report/assignment2_report.md`.
 - Test code: `tests/test_core.py`.
 - Experimental smoke script: `experiments/run_comparison.py`.
@@ -66,3 +66,5 @@ ChatGPT was used to help scaffold the project structure, draft Python modules, t
 ## Additional files
 
 No external dataset or API key is required for the current prototype. The catalogue is included in `clarifyrec/catalog.py`. Do not commit API keys or personal data if future extensions introduce external services.
+
+The report is provided as Markdown source in this repository. The PDF version remains in the working project folder and was not uploaded through the available text-file publishing interface.
