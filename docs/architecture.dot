@@ -1,0 +1,29 @@
+digraph ClarifyRec {
+  rankdir=TB; graph [bgcolor="white", pad="0.25", nodesep="0.35", ranksep="0.42", fontname="Arial", label="ClarifyRec system architecture", labelloc=t, fontsize=20];
+  node [shape=box, style="rounded,filled", fillcolor="#eef4ff", color="#42638a", fontname="Arial", fontsize=10, margin="0.14,0.09"];
+  edge [color="#52677f", arrowsize=0.7, fontname="Arial", fontsize=9];
+  user [label="User"];
+  ui [label="Streamlit chat interface\nIMPLEMENTED"];
+  nlp [label="Rule-based preference extraction\nIMPLEMENTED"];
+  choice [shape=diamond, label="Selected strategy?", fillcolor="#fff4d6"];
+  immediate [label="Immediate update baseline\nIMPLEMENTED"];
+  weighted [label="Recency-weighted baseline\nIMPLEMENTED"];
+  clarify [label="Ambiguity detection\nIMPLEMENTED"];
+  question [label="Clarification prompt + pending state\nIMPLEMENTED"];
+  resolve [label="Interpret user's clarification\nIMPLEMENTED"];
+  profile [label="Preference profile\nlikes / dislikes / constraints\nIMPLEMENTED", fillcolor="#e9f7ee"];
+  catalogue [shape=cylinder, label="20-film illustrative catalogue\nIMPLEMENTED", fillcolor="#f4efff"];
+  rank [label="Content-based ranking\nIMPLEMENTED"];
+  output [label="Ranked results + match scores\nIMPLEMENTED"];
+  planned [label="Planned: MovieLens import\nPlanned: local sentence embeddings", style="rounded,dashed,filled", fillcolor="#f7f7f7", color="#888888"];
+  user -> ui -> nlp -> choice;
+  choice -> immediate [label="baseline 1"];
+  choice -> weighted [label="baseline 2"];
+  choice -> clarify [label="proposed"];
+  clarify -> question [label="ambiguous"];
+  question -> resolve [label="user reply"];
+  clarify -> profile [label="clear correction"];
+  immediate -> profile; weighted -> profile; resolve -> profile;
+  profile -> rank; catalogue -> rank; rank -> output -> ui;
+  planned -> nlp [style=dashed, arrowhead=none]; planned -> catalogue [style=dashed, arrowhead=none];
+}
