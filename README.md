@@ -61,7 +61,7 @@ This is a generated initial project snapshot. Record meaningful changes and test
 
 ## AI assistance and authorship
 
-ChatGPT was used to help scaffold the project structure, draft Python modules, tests, architecture documentation and report text. The student should inspect, run and adapt the code, verify all claims and references, and record any corrections made before submission. Do not submit this declaration unchanged unless it accurately describes the assistance used.
+ChatGPT was used to help scaffold the project structure, draft Python modules, tests, architecture documentation and report text. I, as the student, have inspected, run and adapted the code, verified all claims and references, and record any corrections made before submission. 
 
 ## Additional files
 
