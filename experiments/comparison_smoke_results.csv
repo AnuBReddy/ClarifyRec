@@ -1,0 +1,4 @@
+strategy,scenarios,clarification_prompts,simulated_resolutions,note
+immediate,3,0,0,"Deterministic software smoke test only; not evidence of user satisfaction or general recommendation quality."
+weighted,3,0,0,"Deterministic software smoke test only; not evidence of user satisfaction or general recommendation quality."
+clarifyrec,3,1,1,"Deterministic software smoke test only; not evidence of user satisfaction or general recommendation quality."
