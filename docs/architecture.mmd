@@ -1,0 +1,21 @@
+flowchart TD
+    U[User] --> UI[Streamlit chat UI<br/>IMPLEMENTED]
+    UI --> NLP[Rule-based preference extraction<br/>IMPLEMENTED]
+    NLP --> DEC{Strategy selector<br/>IMPLEMENTED}
+    DEC -->|Immediate baseline| IMM[Immediate preference updater<br/>IMPLEMENTED]
+    DEC -->|Weighted baseline| WGT[Recency-weighted updater<br/>IMPLEMENTED]
+    DEC -->|Proposed| UNC[Ambiguity phrase detector<br/>IMPLEMENTED]
+    UNC -->|Ambiguous| Q[Clarification prompt and pending state<br/>IMPLEMENTED]
+    Q -->|User answer| RES[Interpret selected meaning<br/>IMPLEMENTED]
+    UNC -->|Clear correction| PREF[Preference profile<br/>IMPLEMENTED]
+    IMM --> PREF
+    WGT --> PREF
+    RES --> PREF
+    PREF --> RANK[Transparent content-based ranker<br/>IMPLEMENTED]
+    CAT[(20-item illustrative catalogue<br/>IMPLEMENTED)] --> RANK
+    RANK --> OUT[Ranked recommendations and match scores<br/>IMPLEMENTED]
+    OUT --> UI
+    MOV[Optional MovieLens import<br/>PLANNED]
+    NLP2[Local sentence-embedding model<br/>PLANNED]
+    MOV -.-> CAT
+    NLP2 -.-> NLP
